@@ -32,7 +32,7 @@
       }).catch(err => console.error(err));
     }
     function scanCode() {
-        var xx = document.getElementsByName("name")[0].value;
+        var xx = displayName;
         document.getElementById("scanCode").textContent = "กรุณารอสักครู่";
         liff.scanCode().then(result => {
         const stringifiedResult = JSON.stringify(result);
