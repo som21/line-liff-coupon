@@ -24,10 +24,8 @@
   <script src="https://static.line-scdn.net/liff/edge/versions/2.7.1/sdk.js"></script> 
   liff.getProfile().then(profile => {
         document.getElementById("pictureUrl").src = profile.pictureUrl;
-        document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
-        document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email
   <script>
    function scanCode() {
         var xx = document.getElementsByName("name")[0].value;
