@@ -22,34 +22,7 @@
   <script src="https://static.line-scdn.net/liff/edge/versions/2.7.1/sdk.js"></script>
   <script>
     
-    function scanCode() {
-        var xx = document.getElementsByName("name")[0].value;
-        document.getElementById("scanCode").textContent = "กรุณารอสักครู่";
-        liff.scanCode().then(result => {
-        const stringifiedResult = JSON.stringify(result);
-        obj = JSON.parse(stringifiedResult);
-        var xmlhttp = new XMLHttpRequest();
-        var url = "https://script.google.com/macros/s/AKfycbwklVcx3OQjhviP1hsDvNF7I64EsyNcYriTz35GCbfzVu-WzDFW/exec";
-        var theUrl = url+"?value="+obj.value+"&name="+xx;
-        xmlhttp.open('GET', theUrl);
-        xmlhttp.send();
-            xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var jsonResponse = JSON.parse(this.responseText);
-        }
-        document.getElementById("scanCode").textContent = jsonResponse.xstatus;
-        document.getElementById("ncode").textContent = "โค๊ด : "+obj.value;
-        //document.getElementById("nxname").textContent = "ชื่อ : "+xx;
-        document.getElementById("descc").textContent = jsonResponse.desc;
-        document.getElementById("nname").hidden = true;
-        document.getElementById("nnname").hidden = true;
-
-        document.getElementById("btnScanCode").hidden = true;
-        document.getElementById("btnClose").hidden = false;
-    };
-
-      });
-    }
+    
     liff.init({ liffId: "1655618391-D0RkqYYq" }, () => {
       if (liff.isLoggedIn()) {
         runApp()
