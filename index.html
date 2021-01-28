@@ -35,7 +35,7 @@
         obj = JSON.parse(stringifiedResult);
         var xmlhttp = new XMLHttpRequest();
         var url = "https://script.google.com/macros/s/AKfycbwklVcx3OQjhviP1hsDvNF7I64EsyNcYriTz35GCbfzVu-WzDFW/exec";
-        var theUrl = url+"?value="+obj.value+"&displayName="+xx;
+        var theUrl = url+"?value="+obj.value+"&name="+xx;
         xmlhttp.open('GET', theUrl);
         xmlhttp.send();
             xmlhttp.onreadystatechange = function() {
