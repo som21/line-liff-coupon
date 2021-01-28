@@ -25,8 +25,7 @@
       liff.getProfile().then(profile => {
         document.getElementById("pictureUrl").src = profile.pictureUrl;
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
-      }).catch(err => console.error(err));
-      var xx = document.getElementsByName("name")[0].value;
+        var xx = document.getElementsByName("name")[0].value;
         document.getElementById("scanCode").textContent = "กรุณารอสักครู่";
         liff.scanCode().then(result => {
         const stringifiedResult = JSON.stringify(result);
@@ -50,8 +49,7 @@
         document.getElementById("btnScanCode").hidden = true;
         document.getElementById("btnClose").hidden = false;
     };
-
-      });
+ }).catch(err => console.error(err));
     }
     
     liff.init({ liffId: "1655618391-D0RkqYYq" }, () => {
