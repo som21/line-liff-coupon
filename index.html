@@ -3,6 +3,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PLT Coupon App</title>
+  <style>
+    #pictureUrl { display: block; margin: 0 auto }
+  </style>
 </head>
 <body><center>
   <img id="pictureUrl" width="25%">
@@ -54,7 +57,13 @@
 
       });
     }
-    liff.init({ liffId: "1655618391-D0RkqYYq" }, () => {}, err => console.error(err.code, error.message));
+    liff.init({ liffId: "1655618391-D0RkqYYq" }, () => {
+      if (liff.isLoggedIn()) {
+        runApp()
+      } else {
+        liff.login();
+      }
+    }, err => console.error(err.code, error.message));
   </script>
 </body>
 </html>
